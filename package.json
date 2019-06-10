@@ -15,10 +15,9 @@
     "immutability-helper": "latest"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "yarn --cwd todo-app install && yarn --cwd todo-app build",
+    "deploy": "cp -a todo-app/build/. public/",
+    "heroku-postbuild": "yarn build && yarn deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
